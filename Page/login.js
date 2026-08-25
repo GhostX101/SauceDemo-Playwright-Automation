@@ -1,3 +1,5 @@
+import { expect } from '@playwright/test';
+
 export class loginPage{
     constructor(page) {
         this.page = page;
@@ -13,5 +15,9 @@ export class loginPage{
 
     async Clicklogin(){
         await this.page.locator('[data-test="login-button"]').click();
+    }
+
+    async expectErrorMessage(message){
+        await expect(this.page.locator('[data-test="error"]')).toHaveText(message);
     }
 }
