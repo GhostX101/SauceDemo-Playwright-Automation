@@ -1,6 +1,12 @@
 import { test, expect } from '../Fixtures/test';
 import { loginPage } from '../Page/login';
 
+test('verify URL', async ({page, userData}) =>{
+  await page.goto('/');
+  await expect(page).toHaveURL(/saucedemo/);
+
+});
+
 test('login with Valid credentials', async ({ page, userData }) => {
   const login = new loginPage(page);
   await page.goto('/');

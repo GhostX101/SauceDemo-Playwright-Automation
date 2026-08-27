@@ -39,4 +39,23 @@ export class productPage{
     productinfo3(){
         return this.page.getByText("Rib snap infant onesie for the junior")
     }
+
+    productImg1(){
+        return this.page.locator("(//img[@alt='Sauce Labs Backpack'])[1]")
+
+    }
+
+    productImg2(){
+        return this.page.locator("(//img[@alt='Sauce Labs Bike Light'])[1]")
+
+    }
+
+    productImag3(){
+        return this.page.locator("(//img[@alt='Sauce Labs Onesie'])[1]")
+
+    }
+
+    productCount(){
+        return this.page.locator('[data-test="inventory-item-name"]')
+    }
 }
