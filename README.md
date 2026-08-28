@@ -16,13 +16,10 @@ It covers login (including negative cases), the product listing page, cart UI el
 
 Each page of the app has its own Page Object in `Page/`, holding the locators and the methods for interacting with that page. Test files call those methods instead of touching selectors directly, so if a locator changes, it only needs updating in one place.
 
-`Fixtures/test.js` extends Playwright's base `test` with a `userData` fixture, so every spec file gets test data passed straight into the callback (`async ({ page, userData }) => {...}`) instead of importing it manually. The actual credentials live in `Fixtures/userData.json` (`validUser`, `invalidUser`), kept separate from the test logic.
-
-Specs that need a logged-in session log in inside a `test.beforeEach` hook, so the login steps aren't repeated in every test.
+`Fixtures/test.js` extends Playwright's base `test` with a `userData` fixture, so every spec file gets test data passed straight into the callback (`async ({ page, userData }) => {...}`) instead of importing it manually. The actual credentials live in `Fixtures/userData.json` (`validUser`, `invalidUser`), kept separate from the test logic. Specs that need a logged-in session log in inside a `test.beforeEach` hook, so the login steps aren't repeated in every test.
 
 
 ## Project structure
-
 ```
 .
 ├── .github/                 GitHub Actions workflow, runs the suite on push/PR
@@ -43,9 +40,6 @@ Specs that need a logged-in session log in inside a `test.beforeEach` hook, so t
 ├── playwright.config.js
 └── README.md
 ```
-
-[TODO: list what's in Page/ if you want each page object named individually]
-
 ## Test coverage
 
 **Authentication** (`login.spec.js`)
@@ -79,7 +73,6 @@ All four negative cases check the returned error message matches what Sauce Demo
 ## Example test
 
 Login setup, shared by the product and cart specs:
-
 ```javascript
 test.beforeEach('Login', async ({ page, userData }) => {
   const login = new loginPage(page);
@@ -104,8 +97,6 @@ test.beforeEach('Login', async ({ page, userData }) => {
 
 ## Running the tests
 
-[TODO: confirm these are the actual commands you use, these are the Playwright defaults]
-
 Run everything:
 ```bash
 npx playwright test
@@ -129,8 +120,6 @@ npx playwright show-report
 ## Reporting
 
 Uses Playwright's built in HTML reporter, output goes to `playwright-report/`.
-
-[TODO: confirm nothing else is configured in playwright.config.js]
 
 ## CI/CD Workflow
 
