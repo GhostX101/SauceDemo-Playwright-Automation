@@ -1,6 +1,6 @@
 # SauceDemo Playwright Automation
 
-Playwright end to end test suite for the Sauce Demo web app. Url https://www.saucedemo.com/
+Playwright end to end test suite for the Sauce Demo web app. https://www.saucedemo.com/
 
 It covers login (including negative cases), the product listing page, cart UI elements, and checkout error handling. Built with the Page Object Model so the tests themselves stay short and the locators live in one place.
 
