@@ -73,3 +73,4 @@ await expect(product.productCount()).toHaveCount(6)
 await expect(product.productCount()).toHaveText(['Sauce Labs Backpack','Sauce Labs Bike Light','Sauce Labs Bolt T-Shirt','Sauce Labs Fleece Jacket','Sauce Labs Onesie','Test.allTheThings() T-Shirt (Red)']) 
 expect(await product.productCount().count()).toBeGreaterThan(5)
 });
+
